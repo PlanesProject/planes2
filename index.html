@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Grupal</title>
+  <style>
+    /* Estilos para el banner */
+    .banner {
+      background-color: #90caf9;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    /* Estilos para el menú desplegable */
+    .menu {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+    }
+    
+    .menu button {
+      background-color: #fff;
+      border: none;
+      color: #333;
+      padding: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .menu-content {
+      display: none;
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      background-color: #fff;
+      border: 1px solid #333;
+      padding: 10px;
+      z-index: 1;
+    }
+    
+    .menu-content button {
+      display: block;
+      background-color: #333;
+      border: none;
+      color: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: left;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .options {
+      display: none;
+      background-color: #fff;
+      border: 1px solid #333;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    
+    .options.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">PLANES PROJECT</div>
+  
+  <!-- Menú desplegable -->
+  <div class="menu">
+    <button onclick="toggleMenu()">Menú</button>
+    <div class="menu-content" id="menu-content">
+      <button onclick="showOption(1)">Opción 1</button>
+      <button onclick="showOption(2)">Opción 2</button>
+      <button onclick="showOption(3)">Opción 3</button>
+    </div>
+  </div>
+  
+  <header>
+    <h1>Chat Grupal</h1>
+  </header>
+  
+  <!-- Opciones -->
+  <div class="options" id="option-1">
+    <p>Opción 1 seleccionada</p>
+  </div>
+  
+  <div class="options" id="option-2">
+    <p>Opción 2 seleccionada</p>
+  </div>
+  
+  <div class="options" id="option-3">
+    <p>Opción 3 seleccionada</p>
+  </div>
+  
+  <main>
+    <section id="chat">
+      <ul id="mensajes">
+        <!-- Aquí se mostrarán los mensajes -->
+      </ul>
+      <form id="formulario">
+        <input type="text" id="mensaje">
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  
+  <script>
+    // Función para mostrar
